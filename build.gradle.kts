@@ -1,6 +1,8 @@
 plugins {
     `java-library`
-    `maven-publish`
+    // Same publishing setup as the mobile SDK: Central Portal, signed, credentials and the
+    // in-memory signing key come from ~/.gradle/gradle.properties.
+    id("com.vanniktech.maven.publish") version "0.30.0"
 }
 
 group = "com.codeskop.sdk"
@@ -10,8 +12,6 @@ repositories { mavenCentral() }
 
 java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(21)) }
-    withSourcesJar()
-    withJavadocJar()
 }
 
 tasks.withType<JavaCompile>().configureEach {
@@ -47,17 +47,34 @@ tasks.test {
 
 tasks.javadoc { (options as StandardJavadocDocletOptions).addStringOption("Xdoclint:none", "-quiet") }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            from(components["java"])
-            artifactId = "codeskop-server"
-            pom {
-                name.set("Codeskop server SDK for the JVM")
-                description.set("Errors, incoming requests and outgoing API calls from Java and Kotlin backends (Servlet, Spring Boot, OkHttp).")
-                url.set("https://www.codeskop.com/docs/server/java")
-                licenses { license { name.set("MIT"); url.set("https://opensource.org/licenses/MIT") } }
+mavenPublishing {
+    publishToMavenCentral(com.vanniktech.maven.publish.SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
+
+    coordinates("com.codeskop.sdk", "codeskop-server", version.toString())
+
+    pom {
+        name.set("Codeskop server SDK for the JVM")
+        description.set("Errors, incoming requests and outgoing API calls from Java and Kotlin backends (Servlet, Spring Boot, OkHttp).")
+        inceptionYear.set("2026")
+        url.set("https://github.com/Codeskop-io/codeskop-jvm")
+        licenses {
+            license {
+                name.set("MIT License")
+                url.set("https://opensource.org/licenses/MIT")
             }
+        }
+        developers {
+            developer {
+                id.set("codeskop")
+                name.set("Codeskop")
+                url.set("https://codeskop.com")
+            }
+        }
+        scm {
+            url.set("https://github.com/Codeskop-io/codeskop-jvm")
+            connection.set("scm:git:git://github.com/Codeskop-io/codeskop-jvm.git")
+            developerConnection.set("scm:git:ssh://git@github.com/Codeskop-io/codeskop-jvm.git")
         }
     }
 }
