@@ -3,7 +3,7 @@
 Errors, incoming requests and outgoing API calls from your JVM backend, in Codeskop. Java 11+, zero runtime dependencies.
 
 ```kotlin
-implementation("com.codeskop.sdk:codeskop-server:0.1.0")
+implementation("com.codeskop.sdk:codeskop-server:0.1.1")
 ```
 
 ```java

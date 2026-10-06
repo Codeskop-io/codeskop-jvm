@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.codeskop.sdk"
-version = "0.1.0"
+version = "0.1.1"
 
 repositories { mavenCentral() }
 
@@ -68,6 +68,7 @@ mavenPublishing {
             developer {
                 id.set("codeskop")
                 name.set("Codeskop")
+                email.set("support@codeskop.com")
                 url.set("https://codeskop.com")
             }
         }
