@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1, 2026-10-06
+
+- POM developer contact: support@codeskop.com.
+
 ## 0.1.0 (beta), 2026-10-05
 
 First release.

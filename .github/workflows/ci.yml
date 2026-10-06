@@ -20,5 +20,6 @@ jobs:
           cat > Main.java <<'J'
           public class Main { public static void main(String[] a) { com.codeskop.server.Codeskop.init(com.codeskop.server.Codeskop.options().apiKey("cs_test_pk_abcdefgh12345678").endpoint("http://127.0.0.1:9")); System.out.println(com.codeskop.server.Events.templateRoute("/a/{id}")); } }
           J
-          $JAVA_HOME_11_X64/bin/javac -cp build/libs/codeskop-server-0.1.0.jar Main.java
-          $JAVA_HOME_11_X64/bin/java -cp build/libs/codeskop-server-0.1.0.jar:. Main
+          jar=$(ls build/libs/codeskop-server-*.jar | grep -v -e sources -e javadoc | head -1)
+          $JAVA_HOME_11_X64/bin/javac -cp "$jar" Main.java
+          $JAVA_HOME_11_X64/bin/java -cp "$jar:." Main

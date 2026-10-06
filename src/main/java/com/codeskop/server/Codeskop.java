@@ -18,7 +18,7 @@ import java.util.logging.Level;
  * Every method is safe to call before {@code init} (it does nothing) and never throws.
  */
 public final class Codeskop {
-    public static final String VERSION = "0.1.0";
+    public static final String VERSION = "0.1.1";
     static volatile Client client;
     static volatile String framework;
     private static final ThreadLocal<String> USER = new ThreadLocal<>();
