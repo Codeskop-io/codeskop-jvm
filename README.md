@@ -30,7 +30,7 @@ Works with Spring Boot 3 and any Jakarta Servlet container (Tomcat, Jetty, Under
 ```kotlin
 // build.gradle.kts
 dependencies {
-    implementation("com.codeskop.sdk:codeskop-server:0.1.0")
+    implementation("com.codeskop.sdk:codeskop-server:0.1.1")
 }
 ```
 
@@ -40,7 +40,7 @@ Maven:
 <dependency>
   <groupId>com.codeskop.sdk</groupId>
   <artifactId>codeskop-server</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 

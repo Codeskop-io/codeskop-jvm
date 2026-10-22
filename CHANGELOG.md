@@ -1,8 +1,10 @@
 # Changelog
 
-## 0.1.1, 2026-10-06
+## 0.1.1 (2026-10-22)
 
-- POM developer contact: support@codeskop.com.
+- README rewrite.
+- POM metadata: project URL is now https://www.codeskop.com; developer contact support@codeskop.com.
+- No code changes.
 
 ## 0.1.0 (beta), 2026-10-05
 
