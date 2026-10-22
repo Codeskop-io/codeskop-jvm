@@ -57,7 +57,7 @@ mavenPublishing {
         name.set("Codeskop server SDK for the JVM")
         description.set("Errors, incoming requests and outgoing API calls from Java and Kotlin backends (Servlet, Spring Boot, OkHttp).")
         inceptionYear.set("2026")
-        url.set("https://github.com/Codeskop-io/codeskop-jvm")
+        url.set("https://www.codeskop.com")
         licenses {
             license {
                 name.set("MIT License")
@@ -69,7 +69,7 @@ mavenPublishing {
                 id.set("codeskop")
                 name.set("Codeskop")
                 email.set("support@codeskop.com")
-                url.set("https://codeskop.com")
+                url.set("https://www.codeskop.com")
             }
         }
         scm {
